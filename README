@@ -1,0 +1,13 @@
+16-Apr-2002:	version 1.0.0 released. See doc/ibas_client.um.ps
+		for details.
+
+12-May-2002:	version 1.0.1 released. updated ibas_alert_receiver app
+		to run user specified command for each new alert received.
+
+02-Jun-2002:	version 1.1.0: docs updated
+
+02-Jul-2002:	version 1.1.1: updates for MACOSX architecture
+
+03-Jul-2002:	version 1.1.2: updates to the manual
+
+04-Sep-2004:	version 2.0.0: added support for object_types

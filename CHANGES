@@ -1,0 +1,16 @@
+03-Nov-2010: JB: version 2.1.0
+		updates to leap seconds table, updates for alertd-2.1.0
+		(WEAK alert type)
+
+28-Sep-2004: JB: version 2.0.0
+		=========== IMPORTANT ===========
+		number of arguments passed from ibas_client_receiver
+		onto user provided script/program _HAS_ _CHANGED_ !!!
+		Now ibas_client_receiver passes 27 arguments (previously
+		26 arguments). The new one is object_type. The first 26
+		arguments are in the same order as in previous
+		version (1.1.2)
+
+
+
+		

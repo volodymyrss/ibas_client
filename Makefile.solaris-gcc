@@ -1,0 +1,9 @@
+# Makefile for Solaris/gcc combination
+# should work on any 32-bit architecture (intel/sparc)
+
+CC		= gcc
+CFLAGS		= -g -I. -Wall -D_REENTRANT -DIBC_ARCH_SOLARIS_GCC
+LDFLAGS		= -g -I. -Wall -D_REENTRANT -DIBC_ARCH_SOLARIS_GCC
+NEEDEDLIBS	= -lsocket -lnsl -lposix4
+
+include Makefile.common

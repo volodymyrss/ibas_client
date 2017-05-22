@@ -1,0 +1,13 @@
+# Makefile for MacOSX/cc combination
+#
+# note: MacOSX does not support pthreads (yet), so -D_REENTRANT
+# does not have any effect.
+# very little testing was done on MacOSX so far
+#
+
+CC		= cc
+CFLAGS		= -g -I. -Wall -D_REENTRANT -DIBC_ARCH_MACOSX_CC
+LDFLAGS		= -g -I. -Wall -D_REENTRANT -DIBC_ARCH_MACOSX_CC
+NEEDEDLIBS	=
+
+include Makefile.common

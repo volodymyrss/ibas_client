@@ -1,0 +1,9 @@
+# Makefile for Linux/gcc combination
+# should work on any 32-bit architecture (intel/sparc/ppc/...)
+
+CC		= gcc
+CFLAGS		= -g -I. -Wall -D_REENTRANT -DIBC_ARCH_LINUX_GCC
+LDFLAGS		= -g -I. -Wall -D_REENTRANT -DIBC_ARCH_LINUX_GCC
+NEEDEDLIBS	=
+
+include Makefile.common

@@ -1,0 +1,38 @@
+
+IBC_LIB		= ibas_client
+IBC_FULL_LIB	= lib${IBC_LIB}.a
+IBC_H_FILES	= ibas_client.h ibas_client_support.h ibas_client_time.h ibas_client_api.h ibas_client_error.h
+
+.c.o:
+		${CC} -c ${CFLAGS} $< -o $@
+
+
+all:		ibas_ping ibas_alert_receiver
+
+clean:
+		/bin/rm -f *.o .a *~ *.bak ibas_ping ibas_client-*.*.*.tar* ibas_ping ibas_alert_receiver
+
+targz:		clean
+		tar cvf ibas_client-2.1.0.tar *
+		gzip ibas_client-2.1.0.tar
+
+
+${IBC_FULL_LIB}:	ibas_client_support.o ibas_client_time.o ibas_client_api.o
+		ar -rv $@ ibas_client_support.o ibas_client_time.o ibas_client_api.o
+
+
+ibas_ping:	ibas_ping.o ${IBC_FULL_LIB}
+		${CC} ${LDFLAGS} ibas_ping.o -L. -l${IBC_LIB} -lm -o $@ ${NEEDEDLIBS}
+
+ibas_alert_receiver:	ibas_alert_receiver.o ${IBC_FULL_LIB}
+		${CC} ${LDFLAGS} ibas_alert_receiver.o -L. -l${IBC_LIB} -lm -o $@ ${NEEDEDLIBS}
+
+ibas_client_support.o:	${IBC_H_FILES}
+
+ibas_client_time.o:	${IBC_H_FILES}
+
+ibas_client_api.o:	${IBC_H_FILES}
+
+ibas_ping.o:	ibas_ping.h ${IBC_H_FILES}
+
+ibas_alert_receiver.o:	ibas_alert_receiver.h ${IBC_H_FILES}

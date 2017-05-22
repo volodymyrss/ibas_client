@@ -1,0 +1,5 @@
+# this script is only for compatibility with ISDC's makefiles
+# please ignore everything below this line (but do not delete)
+
+sleep 2
+echo "ibas_client-2.1.0 unit test not implemented"

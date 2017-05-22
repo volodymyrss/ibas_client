@@ -1,0 +1,9 @@
+# Makefile for Solaris and Sun Workshop/Forte compilers combination
+# should work on any 32-bit architecture (intel/sparc)
+
+CC		= cc
+CFLAGS		= -g -I. -D_REENTRANT -DIBC_ARCH_SOLARIS_FORTE 
+LDFLAGS		= -g -I. -D_REENTRANT -DIBC_ARCH_SOLARIS_FORTE
+NEEDEDLIBS	= -lsocket -lnsl -lposix4
+
+include Makefile.common

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# this configure script is only for compatibility with ISDC's makefiles
+# please ignore everything below this line (but do not delete)
+
+echo "ibas_client-2.1.0 configure done".
